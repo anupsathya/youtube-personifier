@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "Attention Merchant",
+  "version": "1.0",
+
+  "description": "Works with the AM thermal printer to provide a receipt for the time spent on a site.",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["am-plugin.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["popup/am-interface.js"]
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "browser_action": {
+    "default_icon": "icons/am-icon.svg",
+    "default_title": "Attention Merchant",
+    "default_popup": "popup/am-interface.html"
+  }
+}
